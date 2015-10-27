@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:soap="http://cxf.apache.org/bindings/soap"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd
+http://cxf.apache.org/jaxws
+http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!-- IP地址输入拦截器 -->
+    <bean id="ipAddressInInterceptor"
+          class="com.auto.webservice.servlet.IpAddressInInterceptor" />
+
+    <jaxws:server id="tasks" serviceClass="com.auto.webservice.server.TasksService" address="/tasks">
+        <jaxws:serviceBean>
+            <bean class="com.auto.webservice.server.TasksServiceImpl" />
+        </jaxws:serviceBean>
+    </jaxws:server>
+
+    <jaxws:server id="workflow" serviceClass="com.auto.webservice.server.WorkflowService" address="/workflow">
+        <jaxws:serviceBean>
+            <bean class="com.auto.webservice.server.WorkflowServiceImpl" />
+        </jaxws:serviceBean>
+    </jaxws:server>
+
+    <jaxws:server id="userInfo" serviceClass="com.auto.webservice.server.UserInfoService" address="/userInfo">
+        <jaxws:serviceBean>
+            <bean class="com.auto.webservice.server.UserInfoServiceImpl" />
+        </jaxws:serviceBean>
+    </jaxws:server>
+</beans>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+    <title>$!app_name</title>
+     
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="${base}/include/css/msg.css" rel="stylesheet" type="text/css"/>
+    <link href="${base}/include/css/default.css" rel="stylesheet" type="text/css"/>
+	<script type='text/javascript'>
+		var CONTEXTPATH = '${base}';
+	</script>
+    <script src="${base}/include/js/main.js"></script>
+    <script src="${base}/include/js/string.js"></script>
+</head>
+<body class="dialogBody">
+<form name='form1' id="form1" method='post'>
+       <input id="modelId" name="modelId" type="hidden" value="$!modelId">
+       <table width="100%" height="100%" align="center" cellpadding="2" cellspacing="0">
+        <tr>
+            <td height="10"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="360" valign="top">
+                <div id="con_one_1"> 
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                            <tr>
+                                <td width="39%" height="30" align="right">
+                                       分类：
+                                </td>
+                                <td width="61%">
+                                    <select id="categoryId" name="categoryId">
+                                        <option value="">未分类</option>
+                                        #foreach($o in $list)
+                                        <option value="$!o.id" #if("$!categoryId"=="$!o.id") selected #end>$!o.name</option>
+                                        #end
+                                    </select>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="39%" height="30" align="right">名称：</td>
+                                <td width="61%">
+                                    <input type="text" name="name" id="name" value="$!name" maxlength="100" size="30" verify="名称|NotNull">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="39%" height="30" align="right">
+                                 		   Key：
+                                </td>
+                                <td width="61%">
+                                    <input type="text" name="key" id="key" value="$!key" maxlength="100" size="30" verify="Key|NotNull">
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="39%" height="30" align="right">描述：</td>
+                                <td width="61%"><textarea rows="7" cols="40" name="description"
+                                                          id="description">$!description</textarea>
+                                </td>
+                            </tr>
+
+
+                        </table> 
+                </div>
+            </td>
+            </tr>
+            </table>
+      </form>
+
+</body>
+</html>

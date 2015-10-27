@@ -1,0 +1,33 @@
+领导审核：<hr>
+<input name="test.id" type="hidden" value="$!{test.id}">
+<input name="taskKey" type="hidden" value="$!{taskKey}">
+<input name="taskId" type="hidden" value="$!{taskId}">
+<input name="processInstanceId" type="hidden" value="$!{processInstanceId}">
+<div class="control-group">
+    <label class="control-label" for="day">请假天数：</label>
+    <div class="controls">
+        <textarea id="day" name="test.day" required>$!{test.day}</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="reason">请假原因：</label>
+    <div class="controls">
+        <textarea id="reason" name="test.reason" required>$!{test.reason}</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="note">审核意见：</label>
+    <div class="controls">
+        <textarea id="note" name="test.note" required>$!{test.note}</textarea>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="_flow_type">选择操作：</label>
+    <div class="controls">
+        <select id="_flow_type" name="_flow_type">
+            <option value='1'>同意</option>
+            <option value='2'>不同意</option>
+            <option value='-1'>结束流程</option>
+        </select>
+    </div>
+</div>

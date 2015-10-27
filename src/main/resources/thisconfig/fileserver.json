@@ -1,0 +1,9 @@
+var ioc = {
+        fileServer : {
+            type : 'com.auto.modules.file.FileServer',
+            fields : {
+                username : 'fileuser',
+                password : 'filepass'
+            }
+        }
+}

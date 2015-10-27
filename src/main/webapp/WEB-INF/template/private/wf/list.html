@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+msg::$!{msg}<br>
+total::$!{total}<br>
+userId::$!{userId}<br>
+<a href="/test/formtest/00?userId=$!{userId}" target="_blank">发起流程</a>
+<hr>
+
+#foreach($o in $list)
+taskId:$!o.id &nbsp;|&nbsp;
+taskName:$!o.name&nbsp;|&nbsp;
+assignee:$!o.assignee #if($o.assignee)已签收#end&nbsp;|&nbsp;
+formKey:$!o.formKey&nbsp;|&nbsp;
+processInstanceId:$!o.processInstanceId&nbsp;|&nbsp;
+taskDefinitionKey:$!o.taskDefinitionKey&nbsp;|&nbsp;
+#if($o.assignee&&"$!userId"=="$!o.assignee")
+<a href="/test/formtest/00?userId=$!{userId}&formKey=$!o.formKey&taskId=$!o.id&taskKey=$!o.taskDefinitionKey&processInstanceId=$!o.processInstanceId" target="_blank">办理</a> &nbsp;|&nbsp;
+#elseif("$!o.assignee"=="")
+<a href="/test/claim?taskId=$!o.id&userId=$!{userId}" target="_blank">签收</a> &nbsp;|&nbsp;
+#end
+
+
+<hr>
+#end
+
+</body>
+</html>
