@@ -8,9 +8,9 @@
 	<name>wzflow</name>
 	<properties>
 		<servlet-api.version>3.1.0</servlet-api.version>
-		<druid.version>1.0.13</druid.version>
-		<nutz.version>1.b.53</nutz.version>
-		<mysql-connector-java.version>5.1.34</mysql-connector-java.version>
+		<druid.version>1.0.25</druid.version>
+		<nutz.version>1.r.59</nutz.version>
+		<mysql-connector-java.version>5.1.40</mysql-connector-java.version>
 		<shiro-all.version>1.2.3</shiro-all.version>
 		<velocity.version>1.7</velocity.version>
 		<velocity-tools.version>2.0</velocity-tools.version>
@@ -505,4 +505,21 @@
 			</plugin>
         </plugins>
     </build>
+	<repositories>
+		<repository>
+			<id>nutz</id>
+			<url>https://jfrog.nutz.cn/artifactory/jcenter</url>
+		</repository>
+		<repository>
+			<id>nutz-snapshots</id>
+			<url>https://jfrog.nutz.cn/artifactory/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+	</repositories>
 </project>
