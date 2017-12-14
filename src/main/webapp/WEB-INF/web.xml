@@ -29,17 +29,6 @@
         <filter-name>nutz</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-    <servlet>
-        <servlet-name>CXFServlet</servlet-name>
-        <!--<servlet-class>com.auto.webservice.servlet.CXFServlet</servlet-class>-->
-        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CXFServlet</servlet-name>
-        <url-pattern>/webservice/*</url-pattern>
-    </servlet-mapping>
     <!-- druid -->
     <servlet>
         <servlet-name>DruidStatView</servlet-name>
